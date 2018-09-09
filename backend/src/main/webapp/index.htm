@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <script src="/backend-1.0/script/util.js"></script>
+    <link rel="stylesheet" href="/backend-1.0/script/style.css">
+</head>
+<body class="page">
+	<h1>Digital Notice Board</h1>
+	<div class="form">
+		<input type="text" id="name" placeholder="your name"><br>
+		<textarea id="desc" placeholder="Image description"></textarea>
+		<br> 
+		<input type="file" id="image" name="pic" accept="image/*"> <br>
+		<button id="submit" onclick="submitForm()">Submit</button>
+		<div class="error" id="error"></div>
+		<div class="message" id="result"></div>
+	</div>
+	<a href="/backend-1.0/admin.htm">admin</a>|
+	<a href="/dist">noticeboard</a>|
+	<a href="/backend-1.0/desktop-1.0.jar">desktop</a>|
+	<a href="/backend-1.0/android-release-unsigned.apk">android</a>
+	<br><br>
+</body>
+</html>
