@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Timer;
 import com.icl.digiboard.network.ImageDownloader;
 import com.icl.digiboard.screen.LoadingScreen;
+import com.icl.digiboard.util.DateUtil;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -36,9 +37,9 @@ public class LiveReloadTask extends Timer.Task {
     }
     public void processResponse(String respJson) {
         dbg("Processing response ");
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
+
         try {
-            Date serverDate = format.parse(respJson);
+            Date serverDate = DateUtil.parse(respJson);//format.parse(respJson);
             Date clientDate = global.getServerTime();
             if(clientDate==null) {
                 global.setServerTime(serverDate);

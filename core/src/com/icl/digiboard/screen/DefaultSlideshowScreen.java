@@ -48,10 +48,21 @@ public class DefaultSlideshowScreen implements Screen {
            this.y = y;
            this.midX = x + texture.getWidth()/2;
            this.midY = y + texture.getHeight()/2;
-           if(texture.getWidth()>texture.getHeight()) {
+           /*float screenAspectRatio = main.getViewport().getWorldWidth()/main.getViewport().getWorldHeight();
+           float textureAspectRatio = texture.getWidth()/texture.getHeight();*/
+
+           /*if(texture.getWidth()>texture.getHeight()) {
+           //if(screenAspectRatio>textureAspectRatio){
                zoom = texture.getWidth()/main.getViewport().getWorldWidth();
            } else {
                zoom = texture.getHeight()/main.getViewport().getWorldHeight();
+           }*/
+           float zoomByWidth = texture.getWidth()/main.getViewport().getWorldWidth();
+           float zoomByHeight = texture.getHeight()/main.getViewport().getWorldHeight();
+           if(texture.getHeight()/zoomByWidth<=main.getViewport().getWorldHeight()) {
+               zoom = zoomByWidth;
+           } else {
+               zoom = zoomByHeight;
            }
        }
     }

@@ -3,9 +3,11 @@ function postLoad() {
 	token = sessionStorage.getItem('token');
 	if(token) {
 		document.getElementById("login").style.display = "none";
+		document.getElementById("table_area").style.display = "";
 		getDetails();
 	} else {
 		document.getElementById("table_area").style.display = "none";
+		document.getElementById("login").style.display = "";
 	}
 }
 function fnDelete(fileId) {
